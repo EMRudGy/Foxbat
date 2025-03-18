@@ -1,7 +1,135 @@
+/*
+
+	===== ===== ===== ===== ===== =====
+	Global rules
+	===== ===== ===== ===== ===== =====
+
+*/
+
+html {
+	display: flex;
+	justify-content:center;
+}
+
 body {
-    background-color: #333;
-    font-family: "Roboto";
-    font-weight: 800;
-    font-stretch:wider;
-    color: #ddd;
+	display: flex;
+}
+
+/*
+
+	===== ===== ===== ===== ===== =====
+	Page type classes
+	===== ===== ===== ===== ===== =====
+
+*/
+
+.Startpage,
+.Subpage {
+	
+	background-color: #355;
+	color: #ddd;
+	display: flex;
+	
+	font-family: "Roboto Flex";
+	font-weight: 600;
+	font-variation-settings: "wght" 200, "wdth" 400;
+
+	padding: 0% 10% 0% 10%;
+
+	background-image: url("./IMG/BG (1).jpeg");
+	background-repeat: repeat-y;
+	background-position-x: center;
+	background-size:cover;
+	background-blend-mode: color-burn;
+
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-self: center;
+
+
+	max-width: 1200px;
+
+}
+
+.Startpage {
+
+}
+
+/*
+
+	===== ===== ===== ===== ===== =====
+	Reusables
+	===== ===== ===== ===== ===== =====
+
+*/
+
+.Startpage > section,
+.Subpage > section {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	flex-basis: auto;
+}
+
+.Startpage article,
+.Subpage article {
+	background-color: #44666680;
+	width: 80%;
+	padding:0 1em;
+}
+
+.Startpage #SecondColumn,
+.Subpage #SecondColumn {
+	background-color: #66006680;
+	width: 20%;
+	padding:0 1em;
+	align-self: flex-start;
+	margin-left: 0;
+	flex-direction: column;
+}
+
+/*
+
+	===== ===== ===== ===== ===== =====
+	Header
+	===== ===== ===== ===== ===== =====
+
+*/
+
+#Header {
+	display: flex;
+	justify-content: space-between;
+	align-self: center;
+	padding:0 1em;
+	width: 100%;
+	background: rgba(255, 0, 0, 0.5);
+}
+
+#HeaderText {
+	color: #fff;
+	font-weight: 200;
+}
+
+#HeaderButtons {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+#HeaderButtons button {
+	display: flex;
+	font-weight: 300;
+	font-size: 2em;
+	font-family: "Roboto Flex";
+	height:fit-content;
+	padding: 1px 2px;
+	margin: 0 0.2em;
+	border: 0px;
+}
+#HeaderButtons > button:first-of-type() {
+	margin: 0 0 0.2em;
+}
+#HeaderButtons > button:last-of-type() {
+	margin: 0.2em 0 0;
 }
