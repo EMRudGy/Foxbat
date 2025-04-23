@@ -17,6 +17,7 @@ html {
 
 body {
 	display: flex;
+	width: 100%;
 }
 
 /*
@@ -55,9 +56,9 @@ body {
 
 }
 
-.Startpage {
+/* .Startpage {
 
-}
+} */
 
 /*
 
@@ -146,9 +147,25 @@ body {
 #HeaderButtons a:hover {
 	background-color: #ACACAC;
 }
-#HeaderButtons > a:first-of-type() {
-	margin: 0 0 0.2rem;
+
+#HeaderButtons > a:first-of-type {
+	margin: 0 0.2rem 0 0; 
 }
-#HeaderButtons > a:last-of-type() {
-	margin: 0.2rem 0 0;
+
+#HeaderButtons > a:last-of-type {
+	margin: 0 0 0 0.2rem;
+}
+
+/*
+
+	===== ===== ===== ===== ===== =====
+	Footer
+	===== ===== ===== ===== ===== =====
+
+*/
+#Footer {
+	display: flex;
+	height: max-content;
+	background-color: #44444456;
+	margin: 0;
 }
