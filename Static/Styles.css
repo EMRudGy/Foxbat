@@ -9,6 +9,10 @@
 html {
 	display: flex;
 	justify-content:center;
+	background-repeat: repeat-y;
+	background-position-x: center;
+	background-size: cover;
+	background-color: #355;
 }
 
 :root {
@@ -17,8 +21,37 @@ html {
 
 body {
 	display: flex;
-	width: 100%;
+	width: 100vw;
+	height: 100vb;
 }
+
+* {
+	box-sizing: border-box;
+}
+
+/*
+
+	===== ===== ===== ===== ===== =====
+	HTML_Generic_*
+	===== ===== ===== ===== ===== =====
+
+*/
+
+#HTML_Generic_Home {
+	background-image: url("./IMG/BG (1).jpeg");
+	background-blend-mode: color-burn;
+}
+
+#HTML_Generic_Subpage {
+	background-image: url("./IMG/BG (3).jpeg");
+	background-blend-mode: color-burn;
+}
+
+#HTML_Generic_Review {
+	background-image: url("./IMG/BG (4).jpeg");
+	background-blend-mode: color-burn;
+}
+
 
 /*
 
@@ -30,8 +63,6 @@ body {
 
 .Startpage,
 .Subpage {
-	
-	background-color: #355;
 	color: #ddd;
 	display: flex;
 	
@@ -39,13 +70,7 @@ body {
 	font-weight: 600;
 	font-variation-settings: "wght" 200, "wdth" 400;
 
-	padding: 0% 10% 0% 10%;
-
-	background-image: url("./IMG/BG (1).jpeg");
-	background-repeat: repeat-y;
-	background-position-x: center;
-	background-size:cover;
-	background-blend-mode: color-burn;
+	margin: 0;
 
 	flex-wrap: wrap;
 	flex-direction: column;
@@ -56,9 +81,29 @@ body {
 
 }
 
-/* .Startpage {
+.LoginPage {
+	background-color: #355;
+	color: #ddd;
+	display: flex;
 
-} */
+	font-family: "Roboto Flex";
+	font-weight: 600;
+	font-variation-settings: "wght" 200, "wdth" 400;
+
+	margin: 0;
+
+	background-image: url("./IMG/BG (5).jpeg");
+	background-repeat: repeat-y;
+	background-position-x: center;
+	background-size:cover;
+	background-blend-mode: darken;
+
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-self: center;
+	align-items: center;
+
+}
 
 /*
 
@@ -79,7 +124,7 @@ body {
 .Startpage article,
 .Subpage article {
 	background-color: #44666680;
-	flex: 0 0 76%;
+	flex: 0 0 80%;
 	padding:0 1%;
 }
 
@@ -163,9 +208,77 @@ body {
 	===== ===== ===== ===== ===== =====
 
 */
+
 #Footer {
 	display: flex;
-	height: max-content;
 	background-color: #44444456;
 	margin: 0;
+	padding: 0.2em;
+	min-width: 100%;
+}
+
+#Footer #FoxbatFooterText {
+}
+
+/*
+
+	===== ===== ===== ===== ===== =====
+	Adaptive design
+	===== ===== ===== ===== ===== =====
+
+*/
+
+@media screen and (max-width: 499px) {
+	#HeaderButtons {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 15cm) {
+	body {
+		font-size: larger;
+	}
+}
+
+@media screen and (max-width: 799px) {
+	.Startpage article,
+	.Subpage article {
+		background-color: #44666680;
+		flex: 0 0 100%;
+		padding:0 1%;
+	}
+
+	.Startpage #SecondColumn,
+	.Subpage #SecondColumn {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 999px) and (min-width: 800px) {
+	.Startpage, .Subpage, .LoginPage {
+		padding: 0;
+		max-width: 1000px;
+	}
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1200px) {
+	.Startpage, .Subpage {
+		min-width: 1000px;
+	}
+}
+
+/*
+
+	===== ===== ===== ===== ===== =====
+	Login page
+	===== ===== ===== ===== ===== =====
+
+*/
+.LoginPage section,
+.LoginPage #Footer {
+	max-width: 1200px;
+	width: 100%;
+}
+.LoginPage #Footer {
+	justify-self: flex-end;
 }
