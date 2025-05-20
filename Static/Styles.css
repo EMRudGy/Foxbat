@@ -201,12 +201,16 @@ body {
 /*
 
 	===== ===== ===== ===== ===== =====
-	Sliding containers
+	Article containers
 	===== ===== ===== ===== ===== =====
 
 */
 
-
+.ArticleContainerSliding {
+	.ArticleContainerOuter {
+		background-image: linear-gradient(90deg, #00d00080, #0000d0c0);
+	}
+}
 
 /*
 
