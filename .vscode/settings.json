@@ -1,0 +1,8 @@
+{
+	"telemetry.feedback.enabled": false,
+	"chat.agent.enabled": false,
+	"chat.commandCenter.enabled": false,
+	"chat.extensionTools.enabled": false,
+	"chat.focusWindowOnConfirmation": false,
+	"editor.insertSpaces": false
+}
