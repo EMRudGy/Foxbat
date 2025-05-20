@@ -207,8 +207,26 @@ body {
 */
 
 .ArticleContainerSliding {
-	.ArticleContainerOuter {
-		background-image: linear-gradient(90deg, #00d00080, #0000d0c0);
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	padding: 0 1em;
+	&.ArticleContainerOuter {
+		background-image: linear-gradient(90deg, #00d00080 1em, #0000d000);
+	}
+	.ArticleContainerInner {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		height: fit-content
+	}
+	.ArticleContainerEntry {
+		display: flex;
+		flex-direction: column;
+		flex: 0 0 15%;
+		.TextCard {
+			height: 80%;
+		}
 	}
 }
 
