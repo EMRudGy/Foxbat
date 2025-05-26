@@ -34,11 +34,11 @@ body {
 
 	h1, h2, h3, h4, h5, h6, .WideText {
 		font-family: "Roboto Flex";
-		font-variation-settings: "wght" 200, "wdth" 200;
+		font-variation-settings: "wght" 600, "wdth" 200;
 	}
-	p, a, input, label {
+	p, a, input, label, li {
 		font-family: "Roboto Flex";
-		font-variation-settings: "wght" 200, "wdth" 100;
+		font-variation-settings: "wght" 300, "wdth" 100;
 	}
 }
 
@@ -116,7 +116,7 @@ body {
 .Subpage .FirstColumn {
 	background-color: #44666680;
 	flex: 0 0 80%;
-	padding:0 1%;
+	padding:0 1em;
 }
 
 .Startpage .SecondColumn,
@@ -229,35 +229,99 @@ body {
 
 */
 
+@keyframes ArticleEntryHover {
+	from {
+		flex: 0 0 25%;
+		font-size: medium;
+	}
+	to {
+		flex: 0 0 30%;
+		font-size: larger;
+	}
+}
+
+.ArticleContainerOuter{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	flex: 1 1 100%;
+	padding: 0 0.5em 0.5em 0.5em;
+	margin: 0 1em 0 0;
+	&>h2 {
+		margin: 0.5em 0 0.5em 0.5em;
+	}
+	&.Green {
+		background-image: linear-gradient(90deg, #00d08080 1em, #0000d000);
+	}
+
+	&.Orange {
+		background-image: linear-gradient(90deg, #ff800080 1em, #0000d000);
+	}
+}
+
+a.ArticleContainerEntry {
+	display: flex;
+	flex-direction: column;
+	
+	background-color: #00000080;
+	backdrop-filter: blur(12px);
+
+	padding: 0 1em;
+
+	text-decoration: none;
+	color: #ddd;
+
+	.TextCard {
+		height: 80%;
+	}
+	
+	/* Transition */
+	
+	/* transition: 0.2s;
+
+	&:hover {
+		flex: 0 0 30%;
+		background-color: #ff6000a0;
+		p {
+			font-size: 24px;
+		}
+	}
+	&:focus {
+		flex: 0 0 100%;
+		background-color: #ff8000ff;
+	} */
+
+	/* Animation */
+	&:hover {
+		flex: 0 0 30%;
+		background-color: #ff6000a0;
+		p {
+			font-size: 24px;
+		}
+	}
+	&:focus {
+		flex: 0 0 100%;
+		background-color: #ff8000ff;
+	}
+}
 .ArticleContainerSliding {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
 	padding: 0 0.5em 0.5em 0.5em;
 	margin: 0 1em 0 0;
-	&>h2 {
-		margin: 0.5em 0 0.5em 0.5em;
-	}
-	&.ArticleContainerOuter {
-		background-image: linear-gradient(90deg, #00d08080 1em, #0000d000);
-	}
+	
 	.ArticleContainerInner {
-		display: flex;
 		flex-direction: row;
 		flex-wrap: nowrap;
 		height: fit-content;
 		overflow-x: auto;
+		& > :not(:first-child) {
+			margin: 0 0 0 0.5em;
+		}
 	}
 	.ArticleContainerEntry {
-		display: flex;
-		flex-direction: column;
 		flex: 0 0 25%;
-		padding: 0 1em;
-		background-color: #00000080;
-		backdrop-filter: blur(12px);
-		.TextCard {
-			height: 80%;
-		}
 	}
 }
 
@@ -431,13 +495,13 @@ body {
 }
 
 @media screen and (max-width: 799px) {
-	.Startpage #FirstColumn,
-	.Subpage #FirstColumn {
+	.Startpage .FirstColumn,
+	.Subpage .FirstColumn {
 		flex: 0 0 100%;
 	}
 
-	.Startpage #SecondColumn,
-	.Subpage #SecondColumn {
+	.Startpage .SecondColumn,
+	.Subpage .SecondColumn {
 		display: none;
 	}
 }
@@ -445,13 +509,11 @@ body {
 @media screen and (max-width: 999px) and (min-width: 800px) {
 	.Startpage, .Subpage, .LoginPage {
 		padding: 0;
-		max-width: 1000px;
 	}
 }
 
 @media screen and (min-width: 1000px) and (max-width: 1200px) {
 	.Startpage, .Subpage {
-		min-width: 1000px;
 	}
 }
 
