@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="../Styles.css">
+	<link rel="stylesheet" href="../../Styles.css">
 	<!--<script src="../JS/Background.js"> </script>	Let's temporarily stop loading the scripting.-->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,19 +15,24 @@
 
 <body class="LoginPage">
 	<nav id="Header">
-		<a href="./Index.htm"><h2 id="HeaderText">Foxbat</h2></a>
+		<a href="../Index.htm"><h2 id="HeaderText">Foxbat</h2></a>
 		<div id="HeaderButtons">
-			<a href="./Review.Index.htm">Reviews</a>
-			<a href="./Blog.Index.htm">Blog</a>
-			<a href="./Login.htm">Login</a>
+			<a href="../Review.Index.htm">Reviews</a>
+			<a href="../Blog.Index.htm">Blog</a>
+			<a href="./LoginFlow/Login.htm">Login</a>
 		</div>
 	</nav>
 	<section class="PageContent">
 		<div id="LoginPagePopup">
 			<h2>Sign in</h2>
+			<div class="Spacer White"></div>
 			<form action="/" method="post" id="LoginPopupStandalone">
-				<input type="text" placeholder="Email or phone number" name="LoginType">
+				<input type="text" placeholder="Email or phone number" name="LoginType" id="UserLoginName">
+				<input type="password" placeholder="Password" name="UserPassword" id="UserLoginPassword">
+				<input type="submit" value="Log in" id="UserLoginButton">
 			</form>
+			<div class="Spacer White"></div>
+			<a id="CreateUserAccount" href="/">Create account</a>
 		</div>
 	</section>
 	<nav id="Footer">

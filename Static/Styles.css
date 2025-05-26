@@ -32,9 +32,14 @@ body {
 	width: 100vw;
 	height: 100vb;
 
-	font-family: "Roboto Flex";
-	font-weight: 600;
-	font-variation-settings: "wght" 200, "wdth" 400;
+	h1, h2, h3, h4, h5, h6, .WideText {
+		font-family: "Roboto Flex";
+		font-variation-settings: "wght" 200, "wdth" 200;
+	}
+	p, a, input, label {
+		font-family: "Roboto Flex";
+		font-variation-settings: "wght" 200, "wdth" 100;
+	}
 }
 
 * {
@@ -127,6 +132,23 @@ body {
 	backdrop-filter: blur(1em);
 }
 
+.Spacer {
+	width: 100%;
+	padding: 2px 0;
+	margin: 4px 0;
+	display: flex;
+
+	border-radius: 2px;
+
+	&.White {
+		background-image: linear-gradient(90deg, #d0d0d0a0, #0000);
+		
+	}
+	&.Orange {
+		background-image: linear-gradient(90deg, #ff8800a0, #0000);
+	}
+}
+
 /*
 
 	===== ===== ===== ===== ===== =====
@@ -141,7 +163,8 @@ body {
 	align-self: center;
 	padding:0 1em;
 	width: 100%;
-	background: rgba(255, 0, 0, 0.5);
+	background: #ff000080;
+	backdrop-filter: blur(4px);
 	user-select: none;
 }
 
@@ -170,9 +193,9 @@ body {
 }
 #HeaderButtons a {
 	display: flex;
-	font-weight: 300;
 	font-size: 2rem;
-	font-family: "Roboto Flex";
+	font-variation-settings: "wght" 200, "wdth" 200;
+
 	height:fit-content;
 	padding: 0.05rem 0.2rem;
 	margin: 0 0.2rem;
@@ -210,20 +233,27 @@ body {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
-	padding: 0 1em;
+	padding: 0 0.5em 0.5em 0.5em;
+	margin: 0 1em 0 0;
+	&>h2 {
+		margin: 0.5em 0 0.5em 0.5em;
+	}
 	&.ArticleContainerOuter {
-		background-image: linear-gradient(90deg, #00d00080 1em, #0000d000);
+		background-image: linear-gradient(90deg, #00d08080 1em, #0000d000);
 	}
 	.ArticleContainerInner {
 		display: flex;
 		flex-direction: row;
 		flex-wrap: nowrap;
-		height: fit-content
+		height: fit-content;
 	}
 	.ArticleContainerEntry {
 		display: flex;
 		flex-direction: column;
 		flex: 0 0 15%;
+		padding: 0 1em;
+		background-color: #00000080;
+		backdrop-filter: blur(12px);
 		.TextCard {
 			height: 80%;
 		}
@@ -244,6 +274,7 @@ body {
 	flex-wrap: wrap;
 	align-self: flex-end;
 	background-color: #44444456;
+	backdrop-filter: blur(4px);
 	margin: 0;
 	padding: 0 1em;
 	min-width: 100%;
@@ -276,6 +307,117 @@ body {
 /*
 
 	===== ===== ===== ===== ===== =====
+	Login page
+	===== ===== ===== ===== ===== =====
+
+*/
+
+
+.LoginPage {
+	/* background-image: linear-gradient(90deg, #ffffff00 0%, #000000c0 37.5%, #000000c0 62.5%, #ffffff00 100%); */
+	color: #ddd;
+	display: flex;
+
+	margin: 0;
+	height: 100vh;
+
+	flex-wrap: nowrap;
+	flex-direction: column;
+	align-self: center;
+	align-items: center;
+
+	/* Modify spacer to use more margin toward the bottom */
+	/* .Spacer {
+		margin: 4px 0 8px 0;
+	} */
+
+	.PageContent {
+		display: flex; 
+		flex-wrap: wrap;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		flex: 0 1 100%;
+		h1, h2, h3, h4, h5, h6, p {
+			padding: 0;
+			margin: 0;
+		}
+	}
+	
+	#LoginPagePopup {
+		display: flex;
+		flex: 0 1 25%;
+		flex-direction: column;
+		flex-wrap: wrap;
+
+		min-width: 400px;
+		max-width: 800px;
+		
+		padding: 0.5em;
+		border-radius: 8px;
+		
+		background-color: #00000080;
+		backdrop-filter: blur(12px);
+	}
+
+	input[type=text],
+	input[type=password],
+	input[type=submit],
+	#CreateUserAccount {
+
+		border: 2px solid #ff000080;
+		border-radius: 4px;
+
+		color: #DCDCDC;
+		background-color: #80808080;
+		backdrop-filter: blur(2px);
+
+		width: 100%;
+		margin: 4px 0 0 0;
+
+		text-align: left;
+		text-decoration: none;
+		font-size: large;
+	}
+
+	input[type=text]::placeholder,
+	input[type=password]::placeholder {
+		color: #dacaffee;
+	}
+
+	input[type=submit]:hover,
+	#CreateUserAccount:hover {
+		background-color: #808080a0;
+	}
+
+	input[type=submit]:focus,
+	#CreateUserAccount:focus {
+		background-color: #80808020;
+	}
+
+	#LoginPopupStandalone {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		/*Would've used :last-child here but I noticed that some extensions inject there. So an id it is.*/
+		#UserLoginButton {
+			margin: 4px 0 4px 0;
+		}
+	}
+
+	.PageContent, #Footer {
+		width: 100%;
+	}
+
+	#Footer {
+		justify-self: flex-end;
+	}
+
+}
+
+/*
+
+	===== ===== ===== ===== ===== =====
 	Adaptive design
 	===== ===== ===== ===== ===== =====
 
@@ -288,8 +430,8 @@ body {
 }
 
 @media screen and (max-width: 799px) {
-	.Startpage article,
-	.Subpage article {
+	.Startpage #FirstColumn,
+	.Subpage #FirstColumn {
 		flex: 0 0 100%;
 	}
 
@@ -324,64 +466,3 @@ body {
 	}
 }
 
-/*
-
-	===== ===== ===== ===== ===== =====
-	Login page
-	===== ===== ===== ===== ===== =====
-
-*/
-
-
-.LoginPage {
-	background-image: linear-gradient(90deg, #ffffff00 0%, #000000c0 37.5%, #000000c0 62.5%, #ffffff00 100%);
-	color: #ddd;
-	display: flex;
-
-	margin: 0;
-	height: 100vh;
-
-	flex-wrap: nowrap;
-	flex-direction: column;
-	align-self: center;
-	align-items: center;
-
-	.PageContent {
-		display: flex;
-		flex-wrap: wrap;
-		flex-direction: column;
-		align-items: center;
-		flex: 0 1 100%;
-		h1, h2, h3, h4, h5, h6, p {
-			padding: 0;
-		}
-	}
-	
-	#LoginPagePopup {
-		display: flex;
-		flex: 1 1 25%;
-		flex-direction: column;
-		flex-wrap: wrap;
-	}
-	#LoginPopupStandalone {
-		display: flex;
-		width: 100%;
-		input[type=text] {
-			border: 2px solid #ff000080;
-			background-color: #8888;
-			color: #DCDCDC;
-			backdrop-filter: blur(2px);
-			width: 100%;
-		}
-		input[type=text]::placeholder {
-			color: #dacaba;
-		}
-	}
-	.PageContent, #Footer {
-		width: 100%;
-	}
-	#Footer {
-		justify-self: flex-end;
-	}
-
-}
