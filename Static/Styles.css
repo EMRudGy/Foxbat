@@ -204,10 +204,10 @@ body {
 	color: #000;
 	text-decoration: none;
 }
-#HeaderButtons a:hover {
+/* #HeaderButtons a:hover {
 	background-color: #ACACACEE;
 	backdrop-filter: blur(5px);
-}
+} */
 #HeaderButtons a:active {
 	backdrop-filter: blur(20px);
 	background-color: #6C6C6CEE;
@@ -221,6 +221,14 @@ body {
 	margin: 0 0 0 0.2rem;
 }
 
+#Header {
+	transition: 200ms;
+	a:hover {
+		background-color: #ACACACEE;
+		backdrop-filter: blur(5px);
+	}
+}
+
 /*
 
 	===== ===== ===== ===== ===== =====
@@ -232,11 +240,25 @@ body {
 @keyframes ArticleEntryHover {
 	from {
 		flex: 0 0 25%;
-		font-size: medium;
 	}
 	to {
 		flex: 0 0 30%;
-		font-size: larger;
+	}
+}
+@keyframes HoverExpand {
+	from {
+		flex: 0 0 25%;
+		background-color: #00000080;
+		.HiddenWhileNotHover {
+			display: none;
+		}
+	}
+	to {
+		flex: 0 0 30%;
+		background-color: #ff6000a0;
+		.HiddenWhileNotHover {
+			display: inline-flex;
+		}
 	}
 }
 
@@ -265,6 +287,7 @@ a.ArticleContainerEntry {
 	
 	background-color: #00000080;
 	backdrop-filter: blur(12px);
+	border-radius: 4px;
 
 	padding: 0 1em;
 
@@ -274,34 +297,22 @@ a.ArticleContainerEntry {
 	.TextCard {
 		height: 80%;
 	}
+	.HiddenWhileNotHover {
+		display: none;
+	}
 	
 	/* Transition */
 	
-	/* transition: 0.2s;
+	transition: 250ms;
 
 	&:hover {
 		flex: 0 0 30%;
 		background-color: #ff6000a0;
-		p {
-			font-size: 24px;
-		}
 	}
 	&:focus {
 		flex: 0 0 100%;
-		background-color: #ff8000ff;
-	} */
-
-	/* Animation */
-	&:hover {
-		flex: 0 0 30%;
-		background-color: #ff6000a0;
-		p {
-			font-size: 24px;
-		}
-	}
-	&:focus {
-		flex: 0 0 100%;
-		background-color: #ff8000ff;
+		/* background-color: #ff8000ff; */
+		background: linear-gradient(180deg, #ff8000ff, #ff00b080);
 	}
 }
 .ArticleContainerSliding {
@@ -339,7 +350,7 @@ a.ArticleContainerEntry {
 	flex-wrap: wrap;
 	align-self: flex-end;
 	background-color: #44444456;
-	backdrop-filter: blur(4px) invert(20%) brightness(40%) opacity(20%);
+	backdrop-filter: brightness(1.4) blur(4px);
 	margin: 0;
 	padding: 0 1em;
 	min-width: 100%;
@@ -428,7 +439,7 @@ a.ArticleContainerEntry {
 	input[type=text],
 	input[type=password],
 	input[type=submit],
-	#CreateUserAccount {
+	.LoginPopupButton {
 
 		border: 2px solid #ff000080;
 		border-radius: 4px;
@@ -451,12 +462,12 @@ a.ArticleContainerEntry {
 	}
 
 	input[type=submit]:hover,
-	#CreateUserAccount:hover {
+	.LoginPopupButton:hover {
 		background-color: #808080a0;
 	}
 
-	input[type=submit]:focus,
-	#CreateUserAccount:focus {
+	input[type=submit]:active,
+	.LoginPopupButton:active {
 		background-color: #80808020;
 	}
 
@@ -492,6 +503,10 @@ a.ArticleContainerEntry {
 	#HeaderButtons {
 		display: none;
 	}
+	.LoginPage #LoginPagePopup {
+		min-width: 0px;
+		flex: 1 1 100%;
+	}
 }
 
 @media screen and (max-width: 799px) {
@@ -509,6 +524,18 @@ a.ArticleContainerEntry {
 @media screen and (max-width: 999px) and (min-width: 800px) {
 	.Startpage, .Subpage, .LoginPage {
 		padding: 0;
+	}
+}
+
+@media screen and (max-width: 499px) {
+	#Footer div {
+		flex: 0 0 100%;
+	}
+}
+
+@media screen and (min-width: 500px) and (max-width: 999px) {
+	#Footer div {
+		flex: 0 0 50%;
 	}
 }
 
