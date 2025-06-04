@@ -40,6 +40,24 @@ body {
 		font-family: "Roboto Flex";
 		font-variation-settings: "wght" 300, "wdth" 100;
 	}
+	h1 {
+		font-size: 2em;
+	}
+	h2 {
+		font-size: 1.5em;
+	}
+	h3 {
+		font-size: 1.17em;
+	}
+	h4 {
+		font-size: 1em;
+	}
+	h5 {
+		font-size: 0.83em;
+	}
+	h6 {
+		font-size: 0.67em;
+	}
 }
 
 * {
@@ -93,7 +111,6 @@ body {
 	flex-wrap: nowrap;
 	flex-direction: column;
 	align-self: center;
-
 }
 
 /*
@@ -173,6 +190,7 @@ body {
 	font-weight: 200;
 	font-size: 2rem;
 	padding: 0;
+	transition: 200ms;
 }
 
 #Header > a {
@@ -180,13 +198,18 @@ body {
 	transition: 200ms;
 	&:hover {
 		transition: 200ms;
-		color: #ddd;
-		filter: blur(20px);
+		h2 {
+			transition: 200ms;
+			color: #ccc;
+		}
 	}
 	&:active {
 		transition: 50ms;
-		color: #ccc;
-		filter: blur(2px);
+		h2 {
+			transition: 50ms;
+			color: #aaa;
+		}
+		
 	}
 }
 
@@ -354,7 +377,7 @@ a.ArticleContainerEntry {
 	flex-wrap: wrap;
 	align-self: flex-end;
 	background-color: #44444456;
-	backdrop-filter: brightness(1.4) blur(4px);
+	backdrop-filter: brightness(0.8) blur(4px);
 	margin: 0;
 	padding: 0 1em;
 	min-width: 100%;
@@ -368,16 +391,29 @@ a.ArticleContainerEntry {
 		flex: 0 0 25%;
 		flex-direction: column;
 		flex-wrap: wrap;
+		/* background: radial-gradient(farthest-corner at 0px 0px, #8230d6d0, #3082d680); */
+		a {
+			transition: 200ms;
+			text-decoration: underline wavy #ddd;
+			&:hover {
+				transition: 200ms;
+				text-decoration: underline wavy #aad;
+			}
+			&:visited {
+				color: inherit;
+			}
+		}
 		.ContainerHeader {
 			margin: 1em 0 0 0;
 		}
 	}
 	#FooterLastInformation {
-		display: flex;
 		flex: 0 0 100%;
+		background: none;
 		flex-direction: column;
 		flex-wrap: nowrap;
 		margin: 1em 0;
+		text-align: center;
 	}
 }
 
@@ -531,15 +567,15 @@ a.ArticleContainerEntry {
 	}
 }
 
-@media screen and (max-width: 499px) {
+@media screen  and (max-width: 999px)and (min-width: 500px) {
 	#Footer div {
-		flex: 0 0 100%;
+		flex: 0 0 50%;
 	}
 }
 
-@media screen and (min-width: 500px) and (max-width: 999px) {
+@media screen and (max-width: 499px) {
 	#Footer div {
-		flex: 0 0 50%;
+		flex: 0 0 100%;
 	}
 }
 
